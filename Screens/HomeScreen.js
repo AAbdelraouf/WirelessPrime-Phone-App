@@ -5,43 +5,35 @@ import { Button } from 'react-native';
 import firebase from './firebase'
 
 var orderRef = firebase.database().ref();
+// var fbLastEntry = firebase.database().ref().limitToLast(1);
 
 class HomeScreen extends React.Component{
     render(){
 
-        logOut = () =>{
-            firebase.auth().signOut()
-            this.props.navigation.push('LoginScreen')
+    // Logout function //
+        logOut = () =>{firebase.auth().signOut()
+        this.props.navigation.push('LoginScreen')};
+        
+        // Log out phone app from the user control web page //
+        logOutAllPhoneApp = ()=> {
+            orderRef.on('child_added', function(data) {
+                var newelyAddedChild = data.val();
+                var attachedEmail = data.key
+                    if(newelyAddedChild === 'ahmed@gmail.com'){
+                    logOut()
+                    alert('Signed out by the (ADMINISTRATOR)')
+                    
+                    // Send message back to firebase database //
+                    orderRef.set({
+                        noteAttached:'Succefully logged out'
+                    })                    
+                    }
+                    else{
+                        null
+                    }
+                });
         }
-        
-        // logOutAllPhoneApp = ()=>
-        // {
-        //     orderRef.on('child_added', function(data) {
-        //         if(data.val() === "Sign phone app out"){
-        //             logOut()
-        //             alert('Signed out by the (ADMINISTRATOR)')
-        //         orderRef.set({
-        //             noteAttached:'Succefully logged out'
-        //         })                    
-        //         }
-        //         else{
-        //             null
-        //         }
-        //     });
-        // }
-        // logOutAllPhoneApp();
-
-        
-
-        // Posting data to the front page when child_added fired //
-        orderRef.on('child_added', function(storedNote){
-            var newelyAdded = storedNote.val();
-            var storedNotsId = storedNote.key
-            alert(newelyAdded.emailAttached + newelyAdded.noteAttached + storedNotsId) 
-            })
-            
-
-
+        logOutAllPhoneApp();
 
         return(
             <View>
