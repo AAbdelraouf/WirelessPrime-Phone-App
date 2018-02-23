@@ -38,6 +38,13 @@ class LoginScreen extends Component{
             firebase.auth().createUserWithEmailAndPassword(email, pass).then((user) =>{
                 this.props.navigation.push('HomeScreen')
                 alert('Thank you ' + email +  ' for joining cine gears')
+
+                firebase.auth().currentUser.sendEmailVerification().then(()=> {
+                    alert('email sent, please follow link in email to verify')
+                    }).catch((error)=> {
+                        alert(error.code)
+                    })
+
             }).catch(function(error){    
                 alert(error.code)
             })

@@ -7,6 +7,7 @@ import HomeScreen from './Screens/HomeScreen';
 import LoginScreen from './Screens/LoginScreen'
 import forgotPasswordScreen from './Screens/forgotPasswordScreen'
 
+// import firebase from './firebase'
 
 export default class App extends React.Component {
   render() {
@@ -20,7 +21,6 @@ const AppNavigator = StackNavigator({
   HomeScreen:{screen: HomeScreen},
   LoginScreen:{screen: LoginScreen},
   forgotPasswordScreen:{screen: forgotPasswordScreen}
-  
 },
 {
   index: 0,
@@ -38,6 +38,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
-
