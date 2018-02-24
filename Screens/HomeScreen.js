@@ -1,48 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, } from 'react-native'
 import { Button } from 'react-native';
-
 import firebase from './firebase'
-
 var orderRef = firebase.database().ref();
 
 
 class HomeScreen extends React.Component{
     render(){
-
-
-        // class App extends React.Component {
-
-        //     constructor() {
-        //       super();
-        //       this.state = {
-        //         loading: true,
-        //         authenticated: false,
-        //       };
-        //     }
-          
-        //     componentDidMount() {
-        //       firebase.auth().onAuthStateChanged((user) => {
-        //         if (user) {
-        //           this.setState({ loading: false, authenticated: true });
-        //         } else {
-        //           this.setState({ loading: false, authenticated: false });
-        //         }
-        //       });
-        //     }
-          
-        //     render() {
-        //       if (this.state.loading) return null; // Render loading/splash screen etc
-          
-        //       if (!this.state.authenticated) {
-        //         this.props.navigation.push('LoginScreen')
-        //       }
-          
-        //       this.props.navigation.push('HomeScreen')
-        //     }
-        //   }
-
-
     // Logout function //
         logOut = () =>{firebase.auth().signOut()
         this.props.navigation.push('LoginScreen')};
