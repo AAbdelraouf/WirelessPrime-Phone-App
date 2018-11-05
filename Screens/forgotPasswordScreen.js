@@ -38,7 +38,7 @@ handleTheEmail = (inputText) => { this.setState({ email: inputText })};
         return (
             <View>   
             <View>
-                <Text style ={forgorPasswordStyles.forgorPasswordText} >Let's retrieve your password</Text>
+                <Text style ={forgorPasswordStyles.forgorPasswordText} >Lets retrieve your password</Text>
                 <TextInput style = {forgorPasswordStyles.forgotPasswordInput}
                     placeholder = "Enter email here"
                     autoCapitalize = 'none'
