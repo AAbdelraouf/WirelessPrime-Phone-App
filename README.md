@@ -1,1 +1,1 @@
-### WirelessPrime-Web-portal .  https://cinegearsuserslist.firebaseapp.com
+### WirelessPrime-Web-portal  https://cinegearsuserslist.firebaseapp.com
