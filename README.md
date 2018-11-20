@@ -1,1 +1,1 @@
-### WirelessPrime-Phone-App .  https://cinegearsuserslist.firebaseapp.com/?
+### WirelessPrime-Phone-App .  https://cinegearsuserslist.firebaseapp.com
